@@ -1,3 +1,18 @@
+Fork
+====
+
+Unfortunately the `nomad-podman-driver` can only run either rootful or rootless.
+We have actual needs to run some workloads rootfull, but want to run most of them rootless.
+
+The workaround employed here is to fork the `nomad-podman-driver` and change the `pluginName` so that we
+can register 2 podman plugins to Nomad, one configured to be rootful and the other to be rootless.
+
+This happens on the `rootful` branch (this branch), where we also deploy from.
+
+Note that this was fixed in v0.6.2, this is kept for compatibility purpose.
+
+Normal readme follows:
+
 Nomad podman Driver
 ==================
 
